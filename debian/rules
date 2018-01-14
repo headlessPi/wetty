@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+DISTRIBUTION = $(shell lsb_release -sr)
+#VERSION= <passed in by VERSION environment variable>
+PACKAGEVERSION = $(VERSION)
+APPNAME=headlesspi-wetty
+INSTALLDIR = debian/${APPNAME}/opt/headlesspi/apps/${APPNAME}
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf debian/${APPNAME}
+override_dh_auto_test:
+override_dh_usrlocal:
+override_dh_auto_build:
+override_dh_auto_install:
+	mkdir -p $(INSTALLDIR)
+	rsync -av . $(INSTALLDIR) --exclude debian --exclude .git --exclude .gitignore --exclude node_modules --exclude Gruntfile.js --exclude Dockerfile
+	cd $(INSTALLDIR) &&	npm install --production
+
+override_dh_gencontrol:
+	dh_gencontrol -- -v$(PACKAGEVERSION)

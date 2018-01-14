@@ -14,3 +14,10 @@ results
 
 npm-debug.log
 node_modules/*
+
+#Ignore files for headlesspi-wetty
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/headlesspi-wetty*
+!debian/headlesspi-wetty.service

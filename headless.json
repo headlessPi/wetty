@@ -2,9 +2,10 @@
   "name": "Wetty Terminal",
   "path": "headlesspi-wetty",
   "type": "iframe",
-  "urlPort": 3000,
+  "urlPort": 9810,
   "urlPath": "/",
   "urlScheme": "http",
   "category": "app",
-  "description": "Log in to the terminal through your browser"
+  "description": "Log in to the terminal through your browser",
+  "version": "0.0.1"
 }

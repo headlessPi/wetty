@@ -1,0 +1,7 @@
+Source: headlesspi-wetty
+Maintainer: Ben Pirt <ben.pirt@mime.co.uk>
+
+Package: headlesspi-wetty
+Architecture: armhf
+Description: An app for headlessPi that lets you access your terminal in the browser
+Depends: nodejs (>= 4)
