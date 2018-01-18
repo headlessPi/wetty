@@ -25,8 +25,8 @@ Wetty.prototype.onTerminalResize = function(col, row) {
 };
 
 socket.on('connect', function() {
+    hterm.defaultStorage = new lib.Storage.Memory();
     lib.init(function() {
-        hterm.defaultStorage = new lib.Storage.Local();
         term = new hterm.Terminal();
         window.term = term;
         term.decorate(document.getElementById('terminal'));
